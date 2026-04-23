@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+    <action>
+        <actionName>run</actionName>
+        <goals>
+            <goal>compile</goal>
+            <goal>exec:java</goal>
+        </goals>
+        <properties>
+            <exec.mainClass>com.smartcampus.Main</exec.mainClass>
+        </properties>
+    </action>
+    <action>
+        <actionName>debug</actionName>
+        <goals>
+            <goal>compile</goal>
+            <goal>exec:java</goal>
+        </goals>
+        <properties>
+            <exec.mainClass>com.smartcampus.Main</exec.mainClass>
+            <exec.args>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address} ${exec.mainClass}</exec.args>
+            <jpda.listen>true</jpda.listen>
+        </properties>
+    </action>
+</actions>
